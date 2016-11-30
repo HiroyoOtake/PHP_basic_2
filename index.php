@@ -1,21 +1,17 @@
 <?php
 
-// 関数をつくる
-// 三角形の面積 = 底辺 * 高さ / 2
+// (1) 円の面積を求める関数 getCircleArea() を定義せよ
+// ※ 円の面積 = 半径 * 半径 * 円周率(≒ 3.14)
 
-function getTriangleArea ($base, $height)
+function getCircleArea ($radius)
 {
-	return $base * $height / 2 ;
+	// return $radius * $radius * 3.14;
+	echo $radius * $radius * 3.14;
 }
 
-// echo getTriangleArea(4, 5);
+// (2) getCircleArea()を用いて、半径が5の円の面積を求め、画面に結果を表示せよ。
 
-function hello($to = '誰かさん')
-{
-	echo 'hello' . $to;
-}
-
-hello('田中さん');
-hello();
+// echo getCircleArea(5);
+getCircleArea(5);
 
 ?>
