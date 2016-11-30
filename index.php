@@ -1,19 +1,21 @@
 <?php
 
-// implode() explode()
-$fruits = array('りんご' , 'みかん' , 'いちご');
+// 1. ファイルを開く fopen()
+$fileName = "tests.dat";
+$data = "書き込みテスト";
 
-$data = implode("#", $fruits);
-// var_dump($data); //string(29)"りんご#みかん#いちご"
-$test = explode('#', $data);
-// var_dump($test); //array(3) { [0]=> string(9) "りんご" [1]=> string(9) "みかん" [2]=> string(9) "いちご"  }
+$fp = fopen($fileName, "a");
+// モード a:追記 w:上書き r:読み取り
 
-//list()
-list($first, $second, $third) = explode("#", $data);
-// echo $first;
+// 2. ファイルにデータを書き込む fwrite()
+if (fwrite($fp, $data) === false)
+{
+	echo "書き込みができませんでした。";
+	exit;
+}
+echo "書き込みが成功しました!";
 
-//data()
-// Y年 m月 d日 H時 i分 s秒
-echo date('Y-m-d H:i:s');
+// 3. ファイルを閉じる fclose()
+fclose($fp);
 
 ?>
