@@ -1,17 +1,30 @@
 <?php
 
-// (1) 円の面積を求める関数 getCircleArea() を定義せよ
-// ※ 円の面積 = 半径 * 半径 * 円周率(≒ 3.14)
+// 現在時刻によってあいさつを変える関数 greet() を作成せよ
+// (i)   現在時刻が6時以降  - 12時より前 -> おはようございます
+// (ii)  現在時刻が12時以降 - 18時より前 -> こんにちは
+// (iii) 現在時刻が18時以降 -  6時より前 -> こんばんは
 
-function getCircleArea ($radius)
+$hour = date('H');
+
+function great($hour,$to = '名無し' )
 {
-	// return $radius * $radius * 3.14;
-	echo $radius * $radius * 3.14;
+	echo '現在時刻は' . $hour . '時ですね。' . $to . 'さん';
+	if ($hour >= 6 && $hour < 12)
+	{
+		echo 'おはようございます';
+	}
+	elseif ($hour >= 12 && $hour < 18)
+	{
+		echo 'こんにちは';
+	}
+	else 
+	{
+		echo 'こんばんは';
+	}
 }
 
-// (2) getCircleArea()を用いて、半径が5の円の面積を求め、画面に結果を表示せよ。
+great($hour, '田中');
 
-// echo getCircleArea(5);
-getCircleArea(5);
 
 ?>
