@@ -1,12 +1,21 @@
 <?php
 
-// Y(X) = 2X + 1
-// X = 2 -> Y = 5  // 2が引数で5が返り値
+// 関数をつくる
+// 三角形の面積 = 底辺 * 高さ / 2
 
-$fruits = array('りんご','みかん','いちご');
+function getTriangleArea ($base, $height)
+{
+	return $base * $height / 2 ;
+}
 
-// 関数名(引数) -> 返り値
-count($fruits); //$fruitsが引数
-var_dump(count($fruits)); //int(3)が返り値
+// echo getTriangleArea(4, 5);
+
+function hello($to = '誰かさん')
+{
+	echo 'hello' . $to;
+}
+
+hello('田中さん');
+hello();
 
 ?>
